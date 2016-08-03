@@ -1,4 +1,4 @@
-/*********************************
+﻿/*********************************
 
 keshif library
 
@@ -3952,6 +3952,14 @@ kshf.Browser.prototype = {
                 localFile.fileType = "tsv";
                 localFile.name = localFile.name.replace(".tsv","");
                 break;
+       	      case "application/vnd.ms-excel":  // MIME for all excel files.  Getting type below via the file extension               
+		if (localFile.name = "*.csv")  
+		{localFile.fileType = "csv";
+                localFile.name = localFile.name.replace(".csv","");}
+		else if (localFile.name = "*.tsv")
+		{localFile.fileType = "tsv";
+                localFile.name = localFile.name.replace(".tsv","");}
+		break;
               default:
                 localFile = undefined;
                 actionButton.attr("disabled",true);
